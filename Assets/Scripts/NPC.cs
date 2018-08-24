@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Characterscript : MonoBehaviour {
-    public string text;
-    public GameObject panel;
-    bool active = false;
+public class NPC : MonoBehaviour {
+    public string speech;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,8 +13,4 @@ public class Characterscript : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void settext(string wish)
-    {
-        text = wish;
-    }
 }

@@ -9,6 +9,8 @@ public class Dialogue : MonoBehaviour {
     public GameObject Panel;
     public bool close = false;
     bool clicked;
+    public string text;
+    public UnityEngine.UI.Text dialogueboxtxt;
     
     
 	// Use this for initialization
@@ -26,7 +28,11 @@ public class Dialogue : MonoBehaviour {
         else
         {
             bool close = false;
-            Panel.SetActive(false);
+            if(dialogueboxtxt.text == text)
+            {
+                Panel.SetActive(false);
+            }
+            
         }
         
 
@@ -40,6 +46,7 @@ public class Dialogue : MonoBehaviour {
         else
         {
             Panel.SetActive(true);
+            dialogueboxtxt.text = text;
         }
     }
     
