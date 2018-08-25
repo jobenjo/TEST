@@ -8,19 +8,31 @@ public class roofscript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Player = GameObject.Find("Player");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(this.gameObject.activeSelf && Vector2.Distance(new Vector2(Player.GetComponent<Transform>().position.x, Player.GetComponent<Transform>().position.y), new Vector2(transform.position.x, transform.position.y)) < Range)
-        {
-            this.GetComponent<SpriteRenderer>().enabled = false;
-        }
-        else
-        {
-            this.GetComponent<SpriteRenderer>().enabled = true;
-        }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("ENTERED");
+        Color tmp = this.GetComponent<SpriteRenderer>().color;
+        tmp.a = 0.3f;
+        this.GetComponent<SpriteRenderer>().color = tmp;
+        
+
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Color tmp = this.GetComponent<SpriteRenderer>().color;
+        tmp.a = 255f;
+        this.GetComponent<SpriteRenderer>().color = tmp;
+        Debug.Log("EXITED");
+        
+
 
     }
 }

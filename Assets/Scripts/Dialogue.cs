@@ -13,10 +13,12 @@ public class Dialogue : MonoBehaviour {
     public UnityEngine.UI.Text dialogueboxtxt;
     
     
+    
 	// Use this for initialization
 	void Start () {
-		
-	}
+        Player = GameObject.Find("Player");
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,6 +49,8 @@ public class Dialogue : MonoBehaviour {
         {
             Panel.SetActive(true);
             dialogueboxtxt.text = text;
+
+            Panel.GetComponent<RectTransform>();
         }
     }
     
